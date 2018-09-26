@@ -12,7 +12,6 @@ public class RemoveAvengerHandler implements RequestHandler<Avenger, HandlerResp
 	
 	@Override
 	public HandlerResponse handleRequest(final Avenger avenger, final Context context) {
-		Avenger updatedAvenger = null;
 		
 		context.getLogger().log("[#] - Searching avenger by id: " + avenger.getId());
 		
@@ -25,12 +24,12 @@ public class RemoveAvengerHandler implements RequestHandler<Avenger, HandlerResp
 		
 		context.getLogger().log("[#] Avenger found, deleting...");
 		
-		updatedAvenger = dao.update(avengerFound);
+		dao.remove(avengerFound);
 		
 		context.getLogger().log("[#] Avenger successfully deleted");
 		
 		
-		final HandlerResponse response = HandlerResponse.builder().setObjectBody(updatedAvenger).build();
+		final HandlerResponse response = HandlerResponse.builder().setObjectBody(avenger).build();
 		
 		return response;
 	}
