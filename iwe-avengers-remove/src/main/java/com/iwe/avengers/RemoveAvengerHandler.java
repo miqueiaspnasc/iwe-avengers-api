@@ -29,7 +29,7 @@ public class RemoveAvengerHandler implements RequestHandler<Avenger, HandlerResp
 		context.getLogger().log("[#] Avenger successfully deleted");
 		
 		
-		final HandlerResponse response = HandlerResponse.builder().setObjectBody(avenger).build();
+		final HandlerResponse response = HandlerResponse.builder().setObjectBody(null).build();
 		
 		return response;
 	}
