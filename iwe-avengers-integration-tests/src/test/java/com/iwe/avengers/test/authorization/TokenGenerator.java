@@ -18,15 +18,15 @@ public class TokenGenerator {
 		
 		String authresult = null;
 
-		final String clientId = "494kpkmh3mk6rpp38c991l608m";
-		final String userPoolId = "1d2ubi23lcu7kgpooiohrhh92j";
+		final String clientId = "1d2ubi23lcu7kgpooiohrhh92j";
+		final String userPoolId = "us-east-1_wg1wPr5CB";
 
 		final AuthenticationHelper auth = new AuthenticationHelper(userPoolId, clientId);
 
 		final InitiateAuthRequest initiateAuthRequest = new InitiateAuthRequest();
 		initiateAuthRequest.setAuthFlow(AuthFlowType.USER_SRP_AUTH);
 		initiateAuthRequest.setClientId(clientId);
-		initiateAuthRequest.addAuthParametersEntry("USERNAME", "mqn");
+		initiateAuthRequest.addAuthParametersEntry("USERNAME", "mpn");
 
 		//O conceito de algoritmos de chave pública é que você tem duas chaves, um público que está disponível para todos e um que é privado e conhecido apenas por você
 		// nesse passo estamos passando uma chave pública gerada a partir de calculos e criptografia
